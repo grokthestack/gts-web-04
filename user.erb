@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>Posts by <%= @user %></h1>
+
+<% if (@posts.length>0) %>
+
+	<% @posts.each do |p| %>
+		<p><%= p['message'] %></p>
+	<% end %>
+
+<% end %>
+</body>
+</html>

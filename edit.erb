@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>Edit <%= @name %></h1>
+<form method="post" action="/users/<%= @name %>">
+
+	<label for="name">New Name</label>
+	<input type="text" name="name" />
+
+	<input type="submit" value="Post" />
+
+</form>
+</body>
+</html>
