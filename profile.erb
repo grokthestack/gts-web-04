@@ -1,0 +1,12 @@
+
+<h1>Welcome to Your Profile, <%= @name %>!</h1>
+
+<% if (@messages.length>0) %>
+
+	<h2>Your Messages</h2>
+
+	<% @messages.each do |m| %>
+		<p><%= m['message'] %></p>
+	<% end %>
+
+<% end %>
