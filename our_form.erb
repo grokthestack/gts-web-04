@@ -1,4 +1,4 @@
-<h1>Welcome to My Site</h1>
+<h1>FREE BOOSIE</h1>
 
 <p>Please leave me a message below!</p>
 
@@ -14,12 +14,12 @@
 
 </form>
 
-<% if (@messages.length>0) %>
-
-	<h2>Previous Messages</h2>
-
-	<% @messages.each do |m| %>
-		<p><b><%= m['name'] %></b> said: "<%= m['message'] %>"</p>
+<h2>Previous Messages</h2>
+	
+	<% @userMessageHash.each_pair do |name, messageArray| %>
+			<ul><a href="/users/<%=name%>"><%=name%></a>
+				<% messageArray.each do |message| %>
+					<li><%= message["message"] %></li>
+				<% end %>
+			</ul>
 	<% end %>
-
-<% end %>
