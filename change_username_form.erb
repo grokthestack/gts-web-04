@@ -1,0 +1,10 @@
+<p>Change your username, <%=@name%></p>
+
+<form method="post" action="/users/<%=@name%>/edit">
+
+	<label for="newName">Your New Username</label>
+	<input type="text" name="newName" />
+
+	<input type="submit" value="Post" />
+
+</form>

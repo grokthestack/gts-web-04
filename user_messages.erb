@@ -1,0 +1,7 @@
+<h1><%=@name%>'s messages</h1>
+
+<ul>
+	<% @messages.each do |m| %>
+	<li><%=m['message']%></li>
+	<% end %>
+</ul>

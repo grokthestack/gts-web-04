@@ -1,0 +1,26 @@
+get '/users/:old_name/edit' do
+	# TODO: still have to create this file
+
+	erb File.read('edit_user_name_form.erb')
+
+	erb File.read('no_such_user.erb')
+end
+
+post '/users/:old_name/edit' do
+	# this comes from the new_name html field
+	@new_name = params['new_name']
+	# pull out old_name from database to make sure it exists later
+	@name = db.execute("SELECT users.name FROM users WHERE users.name = '#{params['old_name']}'")
+	
+	#check if length of array is 0 in the erb file
+	if @name.length > 0
+		db.execute "UPDATE users
+						set name = '#{@new_name}'
+						WHERE user.name = '#{@old_name}'
+					"
+	end
+	# TODO: create this file
+	erb File.read('edit_user_name_success.erb')
+end
+
+
