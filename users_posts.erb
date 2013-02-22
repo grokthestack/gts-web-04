@@ -1,0 +1,36 @@
+<h1>Selected Visitor Messages</h1>
+
+<% if ((@name_found == 0) || (@messages.length == 0)) %>
+
+	<h2>Sorry, the user "<%= @name %>" doesn't exist.</h2>
+
+<% else %>
+
+	<% if (@messages.length>0) %>
+
+		<h2>Messages Left by <%= @name %>:</h2>
+
+		<% @messages.each do |m| %>
+			<p><b><%= m['name'] %></b> said: "<%= m['message'] %>"</p>
+
+		<% end %>
+
+	<% end %>
+
+	<h2>Change the name of visitor <%=@name%>:</h2>
+
+		<form method="get" action="/users/<%=@name%>/edit">
+
+		<input type="submit" value="Change Name" />
+
+	</form>
+
+<% end %>
+
+<p> </p>
+
+<form method="get" action="/">
+
+	<input type="submit" value="Home" />
+
+</form>
