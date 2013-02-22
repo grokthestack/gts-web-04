@@ -1,0 +1,17 @@
+<% if (@name_found == 0) %>
+
+	Sorry, the user "<%= @name %>" doesn't exist.
+
+<% else %>
+
+	User <%= @username %> has been changed to <%= @name %>
+
+<% end %>
+
+<p> </p>
+
+<form method="get" action="/">
+
+	<input type="submit" value="Home" />
+
+</form>
